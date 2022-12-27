@@ -2,8 +2,8 @@ TARGET=gifmetadata
 CC=gcc
 VERSION=v0.0.1
 SOURCE=.gitignore Makefile main.c README.md
-CFLAGS=-fsanitize=address
-# CFLAGS=
+CFLAGS=-Wall
+#CFLAGS=-fsanitize=address -Wall
 LIBS=-lm
 
 OBJS = main.o cli.o gif.o
@@ -37,7 +37,7 @@ host_32: main.c
 	$(CC) main.c -o build/host_32/$(TARGET) -m32
 	
 clean:
-	rm -rf *.o *.tar.gz build/
+	rm -rf *.o *.tar.gz gifmetadata
 
 source_tar: $(SOURCE)
 	tar -czvf $(TARGET)_$(VERSION)_source.tar.gz $(SOURCE)

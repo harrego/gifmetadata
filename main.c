@@ -92,7 +92,6 @@ int main(int argc, char **argv) {
     }
 
     FILE *fileptr;
-    long filelen;
     
     if (access(args->filename, F_OK) != 0) {
         fprintf(stderr, "[error] file '%s' cannot be accessed\n", args->filename);
@@ -110,6 +109,9 @@ int main(int argc, char **argv) {
             break;
         case GIF_FILE_COMMENT_EXCEEDS_BOUNDS:
             fprintf(stderr, "[error] file contains an invalid comment\n");
+            break;
+        default:
+            fprintf(stderr, "[error] unhandled gif state\n");
             break;
         }
     } else {

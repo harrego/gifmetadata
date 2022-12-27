@@ -17,7 +17,7 @@ enum extension_type {
 };
 struct extension_info {
     enum extension_type type;
-    char *buffer;
+    unsigned char *buffer;
     size_t buffer_len;
 };
 
